@@ -1,0 +1,56 @@
+apply plugin: "com.android.feature"
+
+android {
+    compileSdkVersion project.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    baseFeature true
+    buildToolsVersion '27.0.3'
+}
+
+dependencies {
+    feature project(':item-detail')
+    feature project(':browse')
+    feature project(':cart')
+    application project(':apk')
+
+    api("com.android.support:appcompat-v7:${supportLibVersion}",
+            "com.android.support:design:${supportLibVersion}",
+            "com.android.support:recyclerview-v7:$supportLibVersion",
+            "com.android.support:cardview-v7:$supportLibVersion",
+            "com.android.support:support-annotations:${supportLibVersion}")
+    api "com.google.dagger:dagger:2.10"
+    api "com.squareup.picasso:picasso:2.5.2"
+    api "com.squareup.retrofit2:retrofit:2.3.0"
+    api "com.squareup.retrofit2:converter-gson:2.1.0"
+    api "com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2"
+    api "com.google.code.gson:gson:2.8.2"
+
+    api "com.google.firebase:firebase-database:15.0.0"
+    api "com.google.firebase:firebase-storage:15.0.0"
+    api "com.google.firebase:firebase-auth:15.0.0"
+    api "com.google.firebase:firebase-firestore:15.0.0"
+    api "com.google.firebase:firebase-invites:15.0.0"
+    api "com.google.firebase:firebase-core:15.0.0"
+    api 'com.google.android.gms:play-services-maps:15.0.0'
+    api 'com.google.android.gms:play-services-location:15.0.0'
+
+    api "android.arch.lifecycle:viewmodel:1.1.0"
+    api "android.arch.lifecycle:extensions:1.1.0"
+
+    annotationProcessor("com.google.dagger:dagger-compiler:${daggerVersion}")
+}
+
+// plugin needs to be at the bottom
+apply plugin: "com.google.gms.google-services"
