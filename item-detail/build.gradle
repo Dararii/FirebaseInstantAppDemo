@@ -9,6 +9,7 @@ android {
         versionCode project.versionCode
         versionName project.versionName
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
         release {
