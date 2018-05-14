@@ -1,0 +1,34 @@
+buildscript {
+
+    project.ext.minSdkVersion = 19
+    project.ext.targetSdkVersion = 27
+    project.ext.compileSdkVersion = 27
+    project.ext.buildToolsVersion = "27.0.3"
+    project.ext.supportLibVersion = "27.1.1"
+    project.ext.daggerVersion = "2.10"
+    project.ext.firebaseVersion = "15.0.0"
+
+    project.ext.versionCode = 12
+    project.ext.versionName = "1.1.1"
+
+    repositories {
+        jcenter()
+        maven { url 'https://maven.google.com' }
+        google()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.2.0-alpha14"
+        classpath "com.google.gms:google-services:3.1.0"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://maven.google.com' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
