@@ -2,7 +2,6 @@ package com.essensift.korthings.feature.cart.injection;
 
 import android.content.Context;
 
-import com.essensift.korthings.feature.cart.ui.CartViewModel;
 import com.essensift.korthings.injection.ApplicationModule;
 
 import javax.inject.Singleton;
@@ -17,7 +16,7 @@ import dagger.Component;
 @Singleton
 public interface FeatureComponent {
 
-    void inject(CartViewModel cartViewModel);
+    //void inject(CartViewModel cartViewModel);
 
     @Component.Builder
     interface Builder {
